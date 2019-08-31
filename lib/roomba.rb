@@ -14,7 +14,7 @@ class Roomba
     if directions == 'N'
       @position[:y] += 1 if @position[:y] < @room.dimensions[:y]
     elsif directions == 'E'
-      @position[:x] += 1
+      @position[:x] += 1 if @position[:y] < @room.dimensions[:x]
     elsif directions == 'S'
       @position[:y] -= 1 if @position[:y] > 0
     else

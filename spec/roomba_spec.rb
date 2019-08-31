@@ -2,7 +2,7 @@ require 'roomba'
 
 describe Roomba do
   describe 'Roomba directions' do
-    it "knows it's location" do
+    it "Knows it's location" do
       roomba = Roomba.new({:x => 0, :y => 0})
       expect(roomba.current_position).to eq ({:x => 0, :y => 0})
     end
@@ -43,6 +43,11 @@ describe 'Roomba invalid moves' do
   it "Roomba cannot move North if next to the wall" do
     roomba = Roomba.new({:x => 5, :y => 5})
     expect(roomba.move('N')).to eq ({:x => 5, :y => 5})
+  end
+
+  it "Roomba cannot move East if next to the wall" do
+    roomba = Roomba.new({:x => 5, :y => 5})
+    expect(roomba.move('E')).to eq ({:x => 5, :y => 5})
   end
 end
 end

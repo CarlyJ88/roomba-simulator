@@ -1,11 +1,12 @@
 # roomba-simulator
 
 The room knows:
-- it's dimensions
+- It's dimensions
 
 The roomba knows:
-- it's current position
+- It's current position
 - Roomba can move North
 - Roomba can move East
 - Roomba can move South
 - Roomba can move West
+- Does not move outside the parameters of the room
