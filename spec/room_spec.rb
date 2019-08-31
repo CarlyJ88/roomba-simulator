@@ -1,5 +1,4 @@
 require 'room'
-require 'roomba'
 
 describe Room do
   it 'has a small room' do

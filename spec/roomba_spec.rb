@@ -26,4 +26,9 @@ describe Roomba do
     expect(roomba.move('W')).to eq ({:x => 0, :y => 1})
   end
 
+  it "cannot move outside of the rooms dimensions" do
+    roomba = Roomba.new({:x => 0, :y => 0})
+    expect(roomba.move('S')).to eq ({:x => 0, :y => 0})
+  end
+
 end
