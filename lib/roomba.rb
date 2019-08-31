@@ -7,10 +7,9 @@ class Roomba
     @position
   end
 
-end
+  def move(directions)
+    @position[:y] += 1
+    @position
+  end
 
-  # def position(position)
-  #   position.map do |roomba|
-  #     if roomba == 'R'
-  #     roomba 
-  # end
+end

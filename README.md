@@ -5,3 +5,4 @@ The room knows:
 
 The roomba knows:
 - it's current position
+- Roomba can move North
