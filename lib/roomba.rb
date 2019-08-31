@@ -18,7 +18,7 @@ class Roomba
     elsif directions == 'S'
       @position[:y] -= 1 if @position[:y] > 0
     else
-      @position[:x] -= 1
+      @position[:x] -= 1 if @position[:y] > 0
     end
     @position
   end
