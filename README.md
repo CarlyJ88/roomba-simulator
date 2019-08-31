@@ -2,6 +2,7 @@
 
 The room knows:
 - It's dimensions
+- Where the dirt is
 
 The roomba knows:
 - It's current position
