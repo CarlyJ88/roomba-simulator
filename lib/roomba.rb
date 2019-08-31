@@ -1,7 +1,7 @@
 require 'room'
 
 class Roomba
-  def initialize(position, room = Room.new({:x => 5, :y => 5}))
+  def initialize(position, room)
     @position = position
     @room = room
   end
@@ -22,5 +22,4 @@ class Roomba
     end
     @position
   end
-
 end
