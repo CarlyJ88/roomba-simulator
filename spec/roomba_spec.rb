@@ -1,9 +1,10 @@
 require 'roomba'
 
 describe Roomba do
-  describe 'Roomba directions' do
 
-    room = Room.new({:x => 5, :y => 5})
+  room = Room.new({:x => 5, :y => 5})
+
+  describe 'Roomba directions' do
 
     it "Knows it's location" do
       roomba = Roomba.new({:x => 0, :y => 0}, room)
@@ -33,8 +34,6 @@ describe Roomba do
 
   describe 'Roomba invalid moves' do
 
-    room = Room.new({:x => 5, :y => 5})
-
     it "Roomba cannot move South if next to the wall" do
       roomba = Roomba.new({:x => 0, :y => 0}, room)
       expect(roomba.move('S')).to eq ({:x => 0, :y => 0})
@@ -53,6 +52,15 @@ describe Roomba do
     it "Roomba cannot move East if next to the wall" do
       roomba = Roomba.new({:x => 5, :y => 5}, room)
       expect(roomba.move('E')).to eq ({:x => 5, :y => 5})
+    end
+  end
+
+  describe 'Collected dirt' do
+    it 'Cleans one patch of available dirt' do
+      roomba = Roomba.new({:x => 0, :y => 0}, room)
+      room.add_dirt({:x => 0, :y => 1})
+      roomba.move('N')
+      expect(roomba.collected_dirt).to eq 1
     end
   end
 end

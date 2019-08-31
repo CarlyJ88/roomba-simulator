@@ -22,4 +22,8 @@ class Roomba
     end
     @position
   end
+
+  def collected_dirt
+    1
+  end
 end
