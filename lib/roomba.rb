@@ -10,8 +10,10 @@ class Roomba
   def move(directions)
     if directions == 'N'
       @position[:y] += 1
-    else
+    elsif directions == 'E'
       @position[:x] += 1
+    else
+      @position[:y] -= 1
     end
     @position
   end
