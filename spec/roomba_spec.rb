@@ -21,4 +21,9 @@ describe Roomba do
     expect(roomba.move('S')).to eq ({:x => 1, :y => 0})
   end
 
+  it "moves West by 1 move" do
+    roomba = Roomba.new({:x => 1, :y => 1})
+    expect(roomba.move('W')).to eq ({:x => 0, :y => 1})
+  end
+
 end

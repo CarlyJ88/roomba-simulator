@@ -12,8 +12,10 @@ class Roomba
       @position[:y] += 1
     elsif directions == 'E'
       @position[:x] += 1
-    else
+    elsif directions == 'S'
       @position[:y] -= 1
+    else
+      @position[:x] -= 1
     end
     @position
   end
