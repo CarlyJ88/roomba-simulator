@@ -39,5 +39,10 @@ describe 'Roomba invalid moves' do
     roomba = Roomba.new({:x => 0, :y => 0})
     expect(roomba.move('W')).to eq ({:x => 0, :y => 0})
   end
+
+  it "Roomba cannot move North if next to the wall" do
+    roomba = Roomba.new({:x => 5, :y => 5})
+    expect(roomba.move('N')).to eq ({:x => 5, :y => 5})
+  end
 end
 end
