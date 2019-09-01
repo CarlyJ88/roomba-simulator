@@ -18,3 +18,4 @@ Input can:
 - Read the file contents
 - Get the room dimensions
 - Get the Roomba location
+- Get the location of the dirt

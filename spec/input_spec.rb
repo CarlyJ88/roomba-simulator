@@ -19,5 +19,11 @@ describe Input do
       expect(input.get_roomba_location).to eq ({:x => 1, :y => 2})
     end
 
+    it 'Gets the location of dirt patches' do
+      input = Input.new
+      input.read_file
+      expect(input.get_patches_of_dirt).to eq ([{:x => 1, :y => 0}, {:x => 2, :y => 2}, {:x => 2, :y => 3}])
+    end
+
   end
 end
