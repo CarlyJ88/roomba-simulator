@@ -5,31 +5,32 @@ class Input
   PATCHES_OF_DIRT = 2..-2
   DRIVING_INSTRUCTIONS = -1
 
-  def initialize
+  def initialize(input = 'input.txt')
     @lines = []
+    @input = input
   end
   
   def read_file
-    @lines = File.readlines("input.txt")
+    @lines = File.readlines(@input)
   end
 
-  def get_room_dimensions
+  def room_dimensions
     room = @lines[ROOM_DIMENSIONS]
     convert_string_to_hash(room)
   end
 
-  def get_roomba_location
+  def roomba_location
     roomba = @lines[ROOMBA_LOCATION]
     convert_string_to_hash(roomba)
   end
 
-  def get_patches_of_dirt
+  def patches_of_dirt
     dirt = @lines[PATCHES_OF_DIRT].map do |item|
       convert_string_to_hash(item)
     end
   end
 
-  def get_driving_instructions
+  def driving_instructions
     @lines[DRIVING_INSTRUCTIONS].split('')
   end
 
@@ -37,6 +38,6 @@ class Input
 
   def convert_string_to_hash(string)
     array = string.chomp.split.map(&:to_i)
-    { :x => array[0], :y => array[1]}
+    { x: array[0], y: array[1] }
   end
 end

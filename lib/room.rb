@@ -1,4 +1,4 @@
-require 'roomba'
+
 
 class Room
 
@@ -16,6 +16,5 @@ class Room
   end
 
   attr_reader :available_dirt
-  
-end
 
+end
