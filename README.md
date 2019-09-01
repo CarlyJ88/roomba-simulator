@@ -13,3 +13,7 @@ The roomba knows:
 - Does not move outside the parameters of the room
 - Roomba can collect dirt
 - Roomba will not clean same patch of dirt twice if already removed
+
+Input can:
+- Read the file contents
+- Get the room dimensions
