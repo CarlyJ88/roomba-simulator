@@ -1,27 +1,42 @@
 class Input
+
+  ROOM_DIMENSIONS = 0
+  ROOMBA_LOCATION = 1
+  PATCHES_OF_DIRT = 2..-2
+  DRIVING_INSTRUCTIONS = -1
+
+  def initialize
+    @lines = []
+  end
   
   def read_file
-    File.readlines("input.txt")
+    @lines = File.readlines("input.txt")
   end
 
   def get_room_dimensions
-    array = read_file[0].chomp.split.map(&:to_i)
-    [ [:x,array[0]],[:y,array[1]] ].to_h
+    room = @lines[ROOM_DIMENSIONS]
+    convert_string_to_hash(room)
   end
 
   def get_roomba_location
-    array = read_file[1].chomp.split.map(&:to_i)
-    [ [:x,array[0]],[:y,array[1]] ].to_h
+    roomba = @lines[ROOMBA_LOCATION]
+    convert_string_to_hash(roomba)
   end
 
   def get_patches_of_dirt
-    read_file[2..-2].map do |item|
-      array = item.chomp.split.map(&:to_i)
-      [ [:x,array[0]],[:y,array[1]] ].to_h
+    dirt = @lines[PATCHES_OF_DIRT].map do |item|
+      convert_string_to_hash(item)
     end
   end
 
   def get_driving_instructions
-    read_file[-1].split('')
+    @lines[DRIVING_INSTRUCTIONS].split('')
+  end
+
+  private
+
+  def convert_string_to_hash(string)
+    array = string.chomp.split.map(&:to_i)
+    { :x => array[0], :y => array[1]}
   end
 end
