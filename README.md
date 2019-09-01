@@ -19,3 +19,4 @@ Input can:
 - Get the room dimensions
 - Get the Roomba location
 - Get the location of the dirt
+- Get the driving instructions

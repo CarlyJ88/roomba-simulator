@@ -25,5 +25,10 @@ describe Input do
       expect(input.get_patches_of_dirt).to eq ([{:x => 1, :y => 0}, {:x => 2, :y => 2}, {:x => 2, :y => 3}])
     end
 
+    it 'Gets the driving instructions' do
+      input = Input.new
+      input.read_file
+      expect(input.get_driving_instructions).to eq (['N', 'N', 'E', 'S', 'E', 'E', 'S', 'W', 'N', 'W', 'W'])
+    end
   end
 end

@@ -20,4 +20,8 @@ class Input
       [ [:x,array[0]],[:y,array[1]] ].to_h
     end
   end
+
+  def get_driving_instructions
+    read_file[-1].split('')
+  end
 end
