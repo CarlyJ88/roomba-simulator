@@ -4,6 +4,7 @@ class Roomba
   def initialize(position, room)
     @position = position
     @room = room
+    @collected_dirt = 0
   end
 
   def current_position
@@ -20,10 +21,15 @@ class Roomba
     else
       @position[:x] -= 1 if @position[:y] > 0
     end
+    p @room.available_dirt
+    @room.available_dirt.each do |dirt|
+      p dirt
+      @collected_dirt += 1 if @position == dirt
+    end
     @position
   end
 
   def collected_dirt
-    1
+    @collected_dirt
   end
 end
