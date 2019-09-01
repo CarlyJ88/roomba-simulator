@@ -9,4 +9,10 @@ class Input
     array2 = array.map(&:to_i)
     [ [:x,array2[0]],[:y,array2[1]] ].to_h
   end
+
+  def get_roomba_location
+    array = read_file[1].chomp.split
+    array2 = array.map(&:to_i)
+    [ [:x,array2[0]],[:y,array2[1]] ].to_h
+  end
 end

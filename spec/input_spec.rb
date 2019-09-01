@@ -12,5 +12,12 @@ describe Input do
       input.read_file
       expect(input.get_room_dimensions).to eq ({:x => 5, :y => 5})
     end
+
+    it 'Gets the roomba location' do
+      input = Input.new
+      input.read_file
+      expect(input.get_roomba_location).to eq ({:x => 1, :y => 2})
+    end
+
   end
 end
