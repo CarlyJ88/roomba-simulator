@@ -25,6 +25,7 @@ class Roomba
     @room.available_dirt.each do |dirt|
       p dirt
       @collected_dirt += 1 if @position == dirt
+      @room.available_dirt.delete(dirt) if @position == dirt
     end
     @position
   end

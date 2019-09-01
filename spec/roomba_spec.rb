@@ -83,5 +83,16 @@ describe Roomba do
       roomba.move('S')
       expect(roomba.collected_dirt).to eq 1
     end
+
+    it 'Cleans two patches of available dirt' do
+      room = Room.new({:x => 5, :y => 5})
+      roomba = Roomba.new({:x => 0, :y => 0}, room)
+      room.add_dirt({:x => 0, :y => 1})
+      room.add_dirt({:x => 1, :y => 1})
+      roomba.move('N')
+      roomba.move('S')
+      roomba.move('N')
+      expect(roomba.collected_dirt).to eq 1
+    end
   end
 end
