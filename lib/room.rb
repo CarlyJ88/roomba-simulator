@@ -1,5 +1,3 @@
-
-
 class Room
 
   def initialize(dimensions)

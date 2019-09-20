@@ -24,14 +24,18 @@ class Roomba
     else
       @position[:x] -= 1 if @position[:y] > MIN_DIMENSION
     end
-    @room.available_dirt.each do |dirt|
-      @collected_dirt += 1 if @position == dirt
-      @room.available_dirt.delete(dirt) if @position == dirt
-    end
+    how_much_dirt(@position)
     @position
   end
 
   def collected_dirt
     @collected_dirt
+  end
+
+  def how_much_dirt(position)
+    @room.available_dirt.each do |dirt|
+      @collected_dirt += 1 if position == dirt
+      @room.available_dirt.delete(dirt) if position == dirt
+    end
   end
 end

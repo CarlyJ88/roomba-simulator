@@ -84,7 +84,7 @@ describe Roomba do
       expect(roomba.collected_dirt).to eq 1
     end
 
-    it 'Cleans two patches of available dirt' do
+    it 'Cleans one patch of available dirt even when it hoovers over the same spot that was previously dirty' do
       room = Room.new({ x: 5, y: 5 })
       roomba = Roomba.new({ x: 0, y: 0 }, room)
       room.add_dirt({ x: 0, y: 1 })
